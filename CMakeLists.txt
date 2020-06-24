@@ -7,11 +7,15 @@ project(elsa)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
+find_package(catkin REQUIRED COMPONENTS d
   roscpp
   rospy
   std_msgs
+  tf
+  nav_msgs
+  geometry_msgs
 )
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -134,6 +138,14 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/elsa_node.cpp)
+
+add_executable(tf_broadcaster src/tf_broadcaster.cpp)
+add_executable(tf_listener src/tf_listener.cpp)
+add_executable(odom_pub src/odom_publisher.cpp)
+
+target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
+target_link_libraries(tf_listener ${catkin_LIBRARIES})
+target_link_libraries(odom_pub ${catkin_LIBRARIES})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
