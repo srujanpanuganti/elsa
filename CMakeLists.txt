@@ -7,7 +7,7 @@ project(elsa)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS d
+find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
@@ -141,11 +141,11 @@ include_directories(
 
 add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 add_executable(tf_listener src/tf_listener.cpp)
-add_executable(odom_pub src/odom_publisher.cpp)
+#add_executable(odom_pub src/odom_publisher.cpp)
 
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
-target_link_libraries(odom_pub ${catkin_LIBRARIES})
+#target_link_libraries(odom_pub ${catkin_LIBRARIES})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
