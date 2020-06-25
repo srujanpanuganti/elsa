@@ -23,7 +23,7 @@ int main(int argc, char **argv){
 
     ros::Rate loop_rate(31.5);
 
-    std::string port = "dev/ttyUSB0";
+    std::string port = "/dev/ttyUSB0";
     uint32_t baudrate = 9600;
 
     serial::Serial mySerial;
