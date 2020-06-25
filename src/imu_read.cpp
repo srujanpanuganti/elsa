@@ -71,7 +71,7 @@ int main(int argc, char **argv){
                     imu_msg.angular_velocity.y = data[1] * angvel_conversion;
                     imu_msg.angular_velocity.z = data[2] * angvel_conversion;
 
-                    std::cout << "inside while " << pch << std::endl;
+//                    std::cout << "inside while " << pch << std::endl;
 
                     pch = std::strtok(NULL, " ");
                     count++;
