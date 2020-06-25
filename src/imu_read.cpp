@@ -49,10 +49,9 @@ int main(int argc, char **argv){
 
         if(num >128) {
 
-            ROS_INFO("%s", line.c_str());
-
-            std::cout << "num = " << num << std::endl;
-            std::cout << "len of the data = " << line.length() << std::endl;
+//            ROS_INFO("%s", line.c_str());
+//            std::cout << "num = " << num << std::endl;
+//            std::cout << "len of the data = " << line.length() << std::endl;
 
             if(line.length() >0){
 
@@ -72,7 +71,7 @@ int main(int argc, char **argv){
                     imu_msg.angular_velocity.y = data[1] * angvel_conversion;
                     imu_msg.angular_velocity.z = data[2] * angvel_conversion;
 
-                    std::cout << "inside while " << pch << std::endl;
+//                    std::cout << "inside while " << pch << std::endl;
 
                     pch = std::strtok(NULL, " ");
                     count++;
