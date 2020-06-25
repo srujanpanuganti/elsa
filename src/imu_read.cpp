@@ -52,6 +52,7 @@ int main(int argc, char **argv){
             ROS_INFO("%s", line.c_str());
 
             std::cout << "num = " << num << std::endl;
+            std::cout << "len of the data = " << line.length() << std::endl;
 
             char *pch;
             pch = std::strtok(&line[0], " ");
@@ -60,6 +61,7 @@ int main(int argc, char **argv){
             int count = 0;
 
             float angvel_conversion = .005 * 3.1415 / 180.0;
+
 
             while (pch != NULL) {
                 number = pch;
