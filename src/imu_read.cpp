@@ -47,7 +47,7 @@ int main(int argc, char **argv){
 
         mySerial.flush();
 
-        if(num >10) {
+        if(num >100) {
 
             ROS_INFO("%s", line.c_str());
 
@@ -58,14 +58,22 @@ int main(int argc, char **argv){
             std::string number;
             double data[6] = {0};
             int count = 0;
+
+            float angvel_conversion = .005 * 3.1415 / 180.0;
+
             while (pch != NULL) {
                 number = pch;
                 data[count] = atof(number.c_str());
+
+                imu_msg.angular_velocity.x = data[0] * angvel_conversion;
+                imu_msg.angular_velocity.y = data[1] * angvel_conversion;
+                imu_msg.angular_velocity.z = data[2] * angvel_conversion;
 
                 std::cout << "inside while " << pch << std::endl;
 
                 pch = std::strtok(NULL, " ");
                 count++;
+
             }
 //
 //            float angvel_conversion = .005 * 3.1415 / 180.0;
@@ -79,7 +87,7 @@ int main(int argc, char **argv){
 //            imu_msg.linear_acceleration.z = data[5] * linacc_conversion;
 //
 ////            ROS_INFO_STREAM();
-//            chatter_pub.publish(imu_msg);
+            chatter_pub.publish(imu_msg);
             Imu_bag.write("Imu", ros::Time::now(), imu_msg);
         }
 

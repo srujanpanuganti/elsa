@@ -45,5 +45,5 @@ void loop(void)
   Serial.print(event.orientation.z, 4);
   Serial.println("\t");
   
-  delay(100);
+  delay(50);
 }
