@@ -43,7 +43,7 @@ void loop(void)
 //  Serial.println("");
 
   Serial.print(event.orientation.z, 4);
-  Serial.println("\t ");
+  Serial.println("\t");
   
   delay(100);
 }
