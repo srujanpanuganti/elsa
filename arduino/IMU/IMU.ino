@@ -35,15 +35,15 @@ void loop(void)
   /* Display the floating point data */
 //  Serial.print("X: ");
   Serial.print(event.orientation.x, 4);
-  Serial.print("\t");
+  Serial.print("\t ");
 //  Serial.println("");
 
   Serial.print(event.orientation.y, 4);
-  Serial.print("\t");
+  Serial.print("\t ");
 //  Serial.println("");
 
   Serial.print(event.orientation.z, 4);
   Serial.println("\t");
   
-  delay(100);
+  delay(50);
 }
