@@ -47,50 +47,42 @@ int main(int argc, char **argv){
 
         mySerial.flush();
 
-        if(num >100) {
+        if(num >128) {
 
             ROS_INFO("%s", line.c_str());
 
             std::cout << "num = " << num << std::endl;
             std::cout << "len of the data = " << line.length() << std::endl;
 
-            char *pch;
-            pch = std::strtok(&line[0], " ");
-            std::string number;
-            double data[6] = {0};
-            int count = 0;
+            if(line.length() >0){
 
-            float angvel_conversion = .005 * 3.1415 / 180.0;
+                char *pch;
+                pch = std::strtok(&line[0], " ");
+                std::string number;
+                double data[6] = {0};
+                int count = 0;
 
+                float angvel_conversion = .005 * 3.1415 / 180.0;
 
-            while (pch != NULL) {
-                number = pch;
-                data[count] = atof(number.c_str());
+                while (pch != NULL) {
+                    number = pch;
+                    data[count] = atof(number.c_str());
 
-                imu_msg.angular_velocity.x = data[0] * angvel_conversion;
-                imu_msg.angular_velocity.y = data[1] * angvel_conversion;
-                imu_msg.angular_velocity.z = data[2] * angvel_conversion;
+                    imu_msg.angular_velocity.x = data[0] * angvel_conversion;
+                    imu_msg.angular_velocity.y = data[1] * angvel_conversion;
+                    imu_msg.angular_velocity.z = data[2] * angvel_conversion;
 
-                std::cout << "inside while " << pch << std::endl;
+                    std::cout << "inside while " << pch << std::endl;
 
-                pch = std::strtok(NULL, " ");
-                count++;
+                    pch = std::strtok(NULL, " ");
+                    count++;
+
+                }
+                chatter_pub.publish(imu_msg);
+                Imu_bag.write("Imu", ros::Time::now(), imu_msg);
 
             }
-//
-//            float angvel_conversion = .005 * 3.1415 / 180.0;
-//            float linacc_conversion = .00025 * 9.8;
-//
-//            imu_msg.angular_velocity.x = data[0] * angvel_conversion;
-//            imu_msg.angular_velocity.y = data[1] * angvel_conversion;
-//            imu_msg.angular_velocity.z = data[2] * angvel_conversion;
-//            imu_msg.linear_acceleration.x = data[3] * linacc_conversion;
-//            imu_msg.linear_acceleration.y = data[4] * linacc_conversion;
-//            imu_msg.linear_acceleration.z = data[5] * linacc_conversion;
-//
-////            ROS_INFO_STREAM();
-            chatter_pub.publish(imu_msg);
-            Imu_bag.write("Imu", ros::Time::now(), imu_msg);
+
         }
 
         num++;
