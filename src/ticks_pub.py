@@ -23,7 +23,13 @@ class TickPublisher:
         self.left = self.counterBL
         self.right = self.counterBR
 
+        self.initialize_pins()
 
+    def initialize_pins(self):
+
+        gpio.setmode(gpio.BOARD)
+        gpio.setup(7, gpio.IN, pull_up_down = gpio.PUD_UP)
+        gpio.setup(12, gpio.IN, pull_up_down = gpio.PUD_UP)
 
     def main(self):
 
