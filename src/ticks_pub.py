@@ -55,11 +55,11 @@ class TickPublisher:
 
     def publish(self):
 
-        if int(gpio.input(12)) != int(self.buttonBR):
-            self.buttonBR = int(gpio.input(12))
+        if int(gpio.input(7)) != int(self.buttonBR):
+            self.buttonBR = int(gpio.input(7))
             self.counterBR += 1
-        if int(gpio.input(7)) != int(self.buttonBL):
-            self.buttonBL = int(gpio.input(7))
+        if int(gpio.input(12)) != int(self.buttonBL):
+            self.buttonBL = int(gpio.input(12))
             self.counterBL += 1
 
 
