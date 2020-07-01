@@ -27,7 +27,7 @@ class TickPublisher:
 
     def main(self):
 
-        rospy.init_node('diff_drive_mock_robot')
+        rospy.init_node('ticks_pub')
         self.leftPub = rospy.Publisher('~lwheel_ticks',
                                        Int32, queue_size=10)
         self.rightPub = rospy.Publisher('~rwheel_ticks',

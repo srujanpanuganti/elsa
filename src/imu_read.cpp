@@ -67,9 +67,18 @@ int main(int argc, char **argv){
                     number = pch;
                     data[count] = atof(number.c_str());
 
+                    imu_msg.orientation.x = 0;
+                    imu_msg.orientation.y = 0;
+                    imu_msg.orientation.z = 0;
+                    imu_msg.orientation.w = 0;
+
                     imu_msg.angular_velocity.x = data[0] * angvel_conversion;
                     imu_msg.angular_velocity.y = data[1] * angvel_conversion;
                     imu_msg.angular_velocity.z = data[2] * angvel_conversion;
+
+                    imu_msg.linear_acceleration.x = 0;
+                    imu_msg.linear_acceleration.y = 0;
+                    imu_msg.linear_acceleration.z = 0;
 
 //                    std::cout << "inside while " << pch << std::endl;
 
