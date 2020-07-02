@@ -48,8 +48,8 @@ class OdomPub:
         self.oneTickInMeters = 1/self.oneMeterToEncoderTicks
         self.wheelSeparation = 14.5 * 0.01 # metres
         self.pose = Pose()
-        self.baseFrameID = '/base_link'
-        self.odomFrameID = '/odom'
+        self.baseFrameID = 'base_link'
+        self.odomFrameID = 'odom'
 
 
     def main(self):
