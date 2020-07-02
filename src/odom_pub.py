@@ -212,3 +212,13 @@ class OdomPub:
         self.theta_prev = self.pose.theta     # in rad
 
         rospy.loginfo('Setting initial pose to %s', self.pose)
+
+
+
+
+if __name__ == '__main__':
+    try:
+        node = OdomPub()
+        node.main()
+    except rospy.ROSInterruptException:
+        pass
