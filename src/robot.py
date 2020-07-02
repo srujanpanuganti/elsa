@@ -11,24 +11,24 @@ class MotorTicks:
         self.leftDeltaTicks = 0
         self.rightDeltaTicks = 0
 
-    def updateTicks(self):
-        # self.left = 0
-        # self.right = 0
-        counterBL = np.uint64(0)
-        counterBR = np.uint64(0)
-
-        buttonBL = int(0)
-        buttonBR = int(0)
-
-        if int(gpio.input(12)) != int(buttonBR):
-            buttonBR = int(gpio.input(12))
-            counterBR += 1
-        if int(gpio.input(7)) != int(buttonBL):
-            buttonBL = int(gpio.input(7))
-            counterBL += 1
-
-        self.left = counterBL
-        self.right = counterBR
+    # def updateTicks(self):
+    #     # self.left = 0
+    #     # self.right = 0
+    #     counterBL = np.uint64(0)
+    #     counterBR = np.uint64(0)
+    #
+    #     buttonBL = int(0)
+    #     buttonBR = int(0)
+    #
+    #     if int(gpio.input(12)) != int(buttonBR):
+    #         buttonBR = int(gpio.input(12))
+    #         counterBR += 1
+    #     if int(gpio.input(7)) != int(buttonBL):
+    #         buttonBL = int(gpio.input(7))
+    #         counterBL += 1
+    #
+    #     self.left = counterBL
+    #     self.right = counterBR
 
 
 
@@ -46,13 +46,13 @@ class MockRobot:
         self.rightTicks = 0
         self.minTicks = -32768
         self.maxTicks = 32767
-        self.initialize_pins()
+        # self.initialize_pins()
 
-    def initialize_pins(self):
-
-        gpio.setmode(gpio.BOARD)
-        gpio.setup(7, gpio.IN, pull_up_down = gpio.PUD_UP)
-        gpio.setup(12, gpio.IN, pull_up_down = gpio.PUD_UP)
+    # def initialize_pins(self):
+    #
+    #     gpio.setmode(gpio.BOARD)
+    #     gpio.setup(7, gpio.IN, pull_up_down = gpio.PUD_UP)
+    #     gpio.setup(12, gpio.IN, pull_up_down = gpio.PUD_UP)
 
 
     def setSpeeds(self, left, right):
