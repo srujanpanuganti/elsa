@@ -1,4 +1,4 @@
-# ! /usr/bin/env python
+#! /usr/bin/env python
 from __future__ import division
 
 import rospy
@@ -17,6 +17,7 @@ from math import pi,sin,cos,tan
 class OdomPub:
 
     def __init__(self):
+
         self.lwheel_prev = int(0)
         self.rwheel_prev = int(0)
         self.lwheel_cur = int(0)
