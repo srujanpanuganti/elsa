@@ -9,7 +9,7 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 from tf.broadcaster import TransformBroadcaster
 from std_msgs.msg import Int32
 from tf.transformations import quaternion_from_euler, euler_from_quaternion
-from .pose import Pose
+from pose import Pose
 
 import numpy as np
 from math import pi,sin,cos,tan
