@@ -56,8 +56,8 @@ class OdomPub:
 
         rospy.init_node('odom_pub')
 
-        rospy.Subscriber('~lwheel_ticks', Int32, self.leftWheelCallback)
-        rospy.Subscriber('~rwheel_ticks', Int32, self.rightWheelCallback)
+        rospy.Subscriber('ticks_pub/lwheel_ticks', Int32, self.leftWheelCallback)
+        rospy.Subscriber('ticks_pub/rwheel_ticks', Int32, self.rightWheelCallback)
         rospy.Subscriber("initialpose", PoseWithCovarianceStamped,
                          self.initial_pose)
         self.odomPub = rospy.Publisher('odom', Odometry, queue_size=10)

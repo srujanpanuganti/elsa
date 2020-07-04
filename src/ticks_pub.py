@@ -66,7 +66,7 @@ class TickPublisher:
         self.left = self.counterBL
         self.right = self.counterBR
 
-        print(self.left, self.right)
+        # print(self.left, self.right)
 
         self.leftPub.publish(self.left)
         self.rightPub.publish(self.right)
