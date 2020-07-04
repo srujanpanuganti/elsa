@@ -82,8 +82,8 @@ class OdomPub:
 
     def publish(self):
 
-        deltaLeftWheel = self.lwheel_cur = self.lwheel_prev
-        deltarightWheel = self.rwheel_cur = self.rwheel_prev
+        deltaLeftWheel = self.lwheel_cur - self.lwheel_prev
+        deltarightWheel = self.rwheel_cur - self.rwheel_prev
 
         currTime = rospy.get_time()
 
