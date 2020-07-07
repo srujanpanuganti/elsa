@@ -14,13 +14,14 @@
         name="ticks_pub"
         output="screen">
     </node>
-    <!-- odom_pub launch file -->
-    <node pkg="elsa"
-        type="odom_pub.py"
-        name="odom_pub"
-        output="screen">
-    </node>
 </launch>
+
+    <!-- odom_pub launch file -->
+<!--     <node pkg="elsa" -->
+<!--         type="odom_pub.py" -->
+<!--         name="odom_pub" -->
+<!--         output="screen"> -->
+<!--     </node> -->
 
 
 
