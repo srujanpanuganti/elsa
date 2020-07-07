@@ -1,4 +1,7 @@
 <launch>
+
+	<include file="$(find ros_arduino_python)/launch/arduino.launch" />
+
     <!-- tf_broadcaster launch file -->
     <node pkg="elsa"
         type="tf_broadcaster"
