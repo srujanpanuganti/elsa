@@ -5,15 +5,15 @@
         name="robot_tf_publisher"
         output="screen">
     </node>
-    <!-- tf_broadcaster launch file -->
+    <!-- ticks_pub launch file -->
     <node pkg="elsa"
-        type="ticks_pub"
+        type="ticks_pub.py"
         name="ticks_pub"
         output="screen">
     </node>
-    <!-- tf_broadcaster launch file -->
+    <!-- odom_pub launch file -->
     <node pkg="elsa"
-        type="odom_pub"
+        type="odom_pub.py"
         name="odom_pub"
         output="screen">
     </node>
