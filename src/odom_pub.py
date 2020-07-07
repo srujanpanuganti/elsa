@@ -157,7 +157,7 @@ class OdomPub:
         self.pose.yVel = self.lin_y_vel
         self.pose.thetaVel = self.yaw_vel
 
-        print(self.pose.x, self.pose.x, self.pose.xVel, self.pose.thetaVel)
+        # print(self.pose.x, self.pose.x, self.pose.xVel, self.pose.thetaVel)
 
         q = quaternion_from_euler(0, 0, self.pose.theta)
         self.tfPub.sendTransform(
