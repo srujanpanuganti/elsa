@@ -36,7 +36,6 @@
 
 ## References:
 * The project uses the [ROSArduinoBridge](https://github.com/hbrobotics/ros_arduino_bridge) Package. However, many modifications are made according to the requirements
-
-The Project also uses the Arduino Library available on their github [website](https://github.com/sparkfun/SparkFun_RedBot_Arduino_Library)
-
-The Projects also uses few insights from the package [diff_drive](https://github.com/merose/diff_drive)
+* The Project also uses the [SparkFun_RedBot_Arduino_Library](https://github.com/sparkfun/SparkFun_RedBot_Arduino_Library) Arduino Library
+* The Projects also uses few insights from the package [diff_drive](https://github.com/merose/diff_drive)
+* The project refers several tutorials from [ROS wiki](http://wiki.ros.org/ROS/Tutorials) 
