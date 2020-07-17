@@ -18,6 +18,6 @@
  * Finish the base_controller to subscribe to `/cmd_vel` topic to move the robot_base
  * Tune the PID controller
  * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
- * Setup RPLidar A1 for 2D map creation
+ * Setup either RPLidar A1 or YDLidar X2 for 2D map creation
  * Use slam techniques for mapping
  * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
