@@ -32,3 +32,9 @@
 * Setup either RPLidar A1 or YDLidar X2 for 2D map creation
 * Use slam techniques for mapping
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
+
+
+## References:
+The project uses the ROSArduinoBridge Package from https://github.com/hbrobotics/ros_arduino_bridge. However, many modifications are made according to the requirements
+The Project also uses the Arduino Library available at https://github.com/sparkfun/SparkFun_RedBot_Arduino_Library
+The Projects also uses few insights from https://github.com/merose/diff_drive
