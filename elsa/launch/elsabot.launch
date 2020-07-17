@@ -10,7 +10,7 @@
     </node>
     <!-- ticks_pub launch file -->
     <node pkg="elsa"
-        type="imu_read"
+        type="imu_talker"
         name="imu_talker"
         output="screen">
     </node>
