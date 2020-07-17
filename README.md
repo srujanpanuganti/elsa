@@ -1,6 +1,14 @@
 # PROJECT ELSA - Explore, Localize, Map Simultaeneously and Act
 
 
+<p align="center">
+<img src="images/elsabot.jpeg" alt="sign" width="640">
+</p>
+<p align="center">
+<em>ELSA Robot</em>
+</p>
+
+
 ## Finished tasks
 
 * Publish imu to `/imu/raw_data` topic 
