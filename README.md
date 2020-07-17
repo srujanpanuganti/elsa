@@ -1,4 +1,4 @@
-## PROJECT ELSA - Explore, Localize, Map Simultaeneously and Act
+# PROJECT ELSA - Explore, Localize, Map Simultaeneously and Act
 
 
 ## Finished tasks
