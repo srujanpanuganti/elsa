@@ -53,10 +53,16 @@ class BaseController:
         self.accel_limit = rospy.get_param('~accel_limit', 0.1)
         self.motors_reversed = rospy.get_param("~motors_reversed", False)
 
+
+        self.leftPub = rospy.Publisher('~lwheel_ticks',
+                                       Int32, queue_size=10)
+        self.rightPub = rospy.Publisher('~rwheel_ticks',
+                                        Int32, queue_size=10)
+
         # rospy.Subscriber('ticks_pub/lwheel_ticks', Int32, self.leftWheelCallback)
         # rospy.Subscriber('ticks_pub/rwheel_ticks', Int32, self.rightWheelCallback)
 
-    # Set up PID parameters and check for missing values
+        # Set up PID parameters and check for missing values
         self.setup_pid(pid_params)
             
         # How many encoder ticks are there per meter?
@@ -122,13 +128,13 @@ class BaseController:
         self.arduino.update_pid(self.Kp, self.Kd, self.Ki, self.Ko)
 
 
-    def leftWheelCallback(self, lwheelticks):
-        self.leftTicks = lwheelticks.data
-        self.enc_left = self.leftTicks
-
-    def rightWheelCallback(self, rwheelticks):
-        self.rightTicks = rwheelticks.data
-        self.enc_right = self.rightTicks
+    # def leftWheelCallback(self, lwheelticks):
+    #     self.leftTicks = lwheelticks.data
+    #     self.enc_left = self.leftTicks
+    #
+    # def rightWheelCallback(self, rwheelticks):
+    #     self.rightTicks = rwheelticks.data
+    #     self.enc_right = self.rightTicks
 
 
     def poll(self):
@@ -137,7 +143,7 @@ class BaseController:
             # Read the encoders
             try:
                 left_enc, right_enc = self.arduino.get_encoder_counts()
-                print(left_enc, right_enc)
+                # print(left_enc, right_enc)
                 # left_enc = self.enc_left
                 # right_enc = self.enc_right
             except:
@@ -202,7 +208,9 @@ class BaseController:
             odom.twist.twist.angular.z = vth
 
             self.odomPub.publish(odom)
-            
+            self.leftPub.publish(left_enc)
+            self.rightPub.publish(right_enc)
+
             if now > (self.last_cmd_vel + rospy.Duration(self.timeout)):
                 self.v_des_left = 0
                 self.v_des_right = 0
