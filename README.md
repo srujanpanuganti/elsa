@@ -1,4 +1,4 @@
-# PROJECT ELSA - Explore, Localize, Map Simultaeneously and Act
+# ELSA - Explore, Localize, Map Simultaeneously and Act
 
 
 <p align="center">
