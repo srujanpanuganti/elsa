@@ -10,8 +10,8 @@
     </node>
     <!-- ticks_pub launch file -->
     <node pkg="elsa"
-        type="ticks_pub.py"
-        name="ticks_pub"
+        type="imu_read"
+        name="imu_talker"
         output="screen">
     </node>
 </launch>
