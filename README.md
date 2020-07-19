@@ -1,5 +1,18 @@
 # ELSA - Explore, Localize, Map Simultaeneously and Act
 
+## Project information
+* The project has two packages `elsa` and `ros_arduino_bridge`
+* Follow the below instructions to build the project
+  * `cd ~/catkin_ws`
+  * `source devel/setup.bash` 
+  * `catkin_make --only-pkg-with-deps elsa`
+  * `catkin_make --only-pkg-with-deps ros_arduino_bridge`
+* Follow the below commands to execute the project
+  * `roslaunch elsa elsabot.launch`
+
+## Docs:
+* Coordinate Transformations and Robot Dimensions can be found at `docs/Robot dimensions and coordinate transformations.pdf`
+* More info about the references used is provided in the reference section
 
 <p align="center">
 <img src="images/elsabot.jpeg" alt="sign" width="640">
