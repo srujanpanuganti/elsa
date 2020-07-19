@@ -37,7 +37,7 @@
 ## To Do:
 
 * visualized the tf and odometry in rviz
-  * Fix the odometry axis and tf axis alignment
+  * Fix the odometry axis and tf axis alignment - there is some offset of 90 degrees
 * Publish velocoties to `/cmd_vel` topic 
   * Publish sample Twist msg -- Seems like there's an error/lag
   * Debug the motor_driving  
