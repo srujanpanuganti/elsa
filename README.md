@@ -50,14 +50,14 @@
 
 
 <p align="center">
-<img src="images/tf.png" alt="tf" width="640">
+<img src="images/tf.png" alt="tf" width="1080">
 </p>
 <p align="center">
 <em>Coordinate Transformations (TF) in rviz</em>
 </p>
 
 <p align="center">
-<img src="images/odom.png" alt="odom" width="640">
+<img src="images/odom.png" alt="odom" width="1080">
 </p>
 <p align="center">
 <em>Odometry of the ELSA Robot in rviz</em>
