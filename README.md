@@ -1,5 +1,12 @@
 # ELSA - Explore, Localize, Map Simultaeneously and Act
 
+<p align="center">
+<img src="images/elsabot.jpeg" alt="elsa" width="640">
+</p>
+<p align="center">
+<em>ELSA Robot</em>
+</p>
+
 ## Project information
 * The project has two packages `elsa` and `ros_arduino_bridge`
 * Follow the below instructions to build the project
@@ -10,17 +17,10 @@
 * Follow the below commands to execute the project
   * `roslaunch elsa elsabot.launch`
 
+
 ## Docs:
 * Coordinate Transformations and Robot Dimensions can be found at `docs/Robot dimensions and coordinate transformations.pdf`
 * More info about the references used is provided in the reference section
-
-<p align="center">
-<img src="images/elsabot.jpeg" alt="sign" width="640">
-</p>
-<p align="center">
-<em>ELSA Robot</em>
-</p>
-
 
 ## Finished tasks
 
@@ -45,6 +45,23 @@
 * Setup either RPLidar A1 or YDLidar X2 for 2D map creation
 * Use slam techniques for mapping
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
+
+## Results
+
+
+<p align="center">
+<img src="images/tf.png" alt="tf" width="640">
+</p>
+<p align="center">
+<em>Coordinate Transformations (TF) in rviz</em>
+</p>
+
+<p align="center">
+<img src="images/odom.png" alt="odom" width="640">
+</p>
+<p align="center">
+<em>Odometry of the ELSA Robot in rviz</em>
+</p>
 
 
 ## References:
