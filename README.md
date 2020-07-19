@@ -39,3 +39,4 @@
 * The Project also uses the [SparkFun_RedBot_Arduino_Library](https://github.com/sparkfun/SparkFun_RedBot_Arduino_Library) Arduino Library
 * The Projects also uses few insights from the package [diff_drive](https://github.com/merose/diff_drive)
 * The project refers several tutorials from [ROS wiki](http://wiki.ros.org/ROS/Tutorials) 
+* The topics are published according to the coordinates frames as per [REP103 standards](https://www.ros.org/reps/rep-0103.html) and [REP105 standards](https://www.ros.org/reps/rep-0105.html)
