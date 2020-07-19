@@ -144,7 +144,7 @@ class BaseController:
             try:
                 left_enc, right_enc = self.arduino.get_encoder_counts()
                 left_enc, right_enc = -left_enc, -right_enc
-                print(left_enc, right_enc)
+                # print(left_enc, right_enc)
                 # left_enc = self.enc_left
                 # right_enc = self.enc_right
             except:
