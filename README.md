@@ -48,6 +48,7 @@
 
 ## Results
 
+* The below image shows the `/base_link` and `/odom` coordinate frames and trasformations between them in rviz
 
 <p align="center">
 <img src="images/tf.png" alt="tf" width="1080">
@@ -55,6 +56,8 @@
 <p align="center">
 <em>Coordinate Transformations (TF) in rviz</em>
 </p>
+
+* The below image shows the robot movement in rviz based on the odometry published to `/odom` topic
 
 <p align="center">
 <img src="images/odom.png" alt="odom" width="1080">
