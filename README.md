@@ -7,7 +7,7 @@
 <em>ELSA Robot</em>
 </p>
 
-## Project information
+## Project information:
 * The project has two packages `elsa` and `ros_arduino_bridge`
 * Follow the below instructions to build the project
   * `cd ~/catkin_ws`
@@ -22,7 +22,7 @@
 * Coordinate Transformations and Robot Dimensions can be found at `docs/Robot dimensions and coordinate transformations.pdf`
 * More info about the references used is provided in the reference section
 
-## Finished tasks
+## Finished tasks:
 
 * Publish imu to `/imu/raw_data` topic 
 * Publish encoder ticks to `/ticks_pub/lwheel_ticks` and `/ticks_pub/lwheel_ticks` topics
@@ -34,8 +34,10 @@
   * Edit the scripts for the second USB port (/dev/ttyUSB*)
 * Publish encoder ticks to `/arduino/lwheel_ticks` and `/arduino/lwheel_ticks` topics
 
-## To Do
+## To Do:
 
+* visualized the tf and odometry in rviz
+  * Fix the odometry axis and tf axis alignment
 * Publish velocoties to `/cmd_vel` topic 
   * Publish sample Twist msg -- Seems like there's an error/lag
   * Debug the motor_driving  
@@ -46,7 +48,7 @@
 * Use slam techniques for mapping
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
 
-## Results
+## Results:
 
 * The below image shows the `/base_link` and `/odom` coordinate frames and trasformations between them in rviz
 
