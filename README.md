@@ -33,15 +33,15 @@
   * Connect the Arduino Nano to the Motor_Driver
   * Edit the scripts for the second USB port (/dev/ttyUSB*)
 * Publish encoder ticks to `/arduino/lwheel_ticks` and `/arduino/lwheel_ticks` topics
+* Publish velocoties to `/cmd_vel` topic 
+  * Publish sample Twist msg -- Seems like there's an error/lag
+  * Debug the motor_driving  
+* Finish the base_controller to subscribe to `/cmd_vel` topic to move the robot_base
 
 ## To Do:
 
 * visualized the tf and odometry in rviz
   * Fix the odometry axis and tf axis alignment - there is some offset of 90 degrees
-* Publish velocoties to `/cmd_vel` topic 
-  * Publish sample Twist msg -- Seems like there's an error/lag
-  * Debug the motor_driving  
-* Finish the base_controller to subscribe to `/cmd_vel` topic to move the robot_base
 * Tune the PID controller
 * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
 * Setup either RPLidar A1 or YDLidar X2 for 2D map creation
