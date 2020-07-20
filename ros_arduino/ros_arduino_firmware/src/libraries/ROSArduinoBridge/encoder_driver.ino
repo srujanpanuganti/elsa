@@ -37,7 +37,7 @@
 
   int countsPerRev = 960;
 
-  RedBotEncoder encoder = RedBotEncoder(A5, 3);  // initializes encoder on pins A2 and 10
+  RedBotEncoder encoder = RedBotEncoder(3, A5);  // initializes encoder on pins A2 and 10
 
   /* Interrupt routine for LEFT encoder, taking care of actual counting */
 
@@ -71,8 +71,8 @@
 
   /* Wrap the encoder reading function */
   long readEncoder(int i) {
-    if (i == LEF) return -encoder.getTicks(LEFT);
-    else return -encoder.getTicks(RIGHT);
+    if (i == LEF) return encoder.getTicks(LEFT);
+    else return encoder.getTicks(RIGHT);
   }
 
   /* Wrap the encoder reset function */
