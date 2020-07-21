@@ -1,7 +1,7 @@
 # ELSA - Explore, Localize, Map Simultaeneously and Act
 
 <p align="center">
-<img src="images/elsa1.jpg" alt="elsa" width="640">
+<img src="images/elsa1.jpg" alt="elsa" width="480">
 </p>
 <p align="center">
 <em>ELSA Robot</em>
