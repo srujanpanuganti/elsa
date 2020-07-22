@@ -1,68 +1,132 @@
-/*
- * OpenCV Example using ROS and CPP
- */
-
-// Include the ROS library
-#include <ros/ros.h>
-
-// Include opencv2
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
-
-// Include CvBridge, Image Transport, Image msg
+//#include <ros/ros.h>
 //#include <image_transport/image_transport.h>
-#include <cv_bridge/cv_bridge.h>
-#include <sensor_msgs/image_encodings.h>
-
-// OpenCV Window Name
+//#include <cv_bridge/cv_bridge.h>
+//#include <sensor_msgs/image_encodings.h>
+//#include <opencv2/imgproc/imgproc.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//
 //static const std::string OPENCV_WINDOW = "Image window";
-
-// Topics
-//static const std::string IMAGE_TOPIC = "/camera/rgb/image_raw";
-//static const std::string PUBLISH_TOPIC = "/image_converter/output_video";
-
-// Publisher
-//ros::Publisher pub;
-
-//void image_cb(const sensor_msgs::ImageConstPtr& msg)
+//
+//class ImageConverter
 //{
-//    std_msgs::Header msg_header = msg->header;
-//    std::string frame_id = msg_header.frame_id.c_str();
-//    ROS_INFO_STREAM("New Image from " << frame_id);
+//    ros::NodeHandle nh_;
+//    image_transport::ImageTransport it_;
+//    image_transport::Subscriber image_sub_;
+//    image_transport::Publisher image_pub_;
 //
-//    cv_bridge::CvImagePtr cv_ptr;
-//    try
+//public:
+//    ImageConverter()
+//            : it_(nh_)
 //    {
-//        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+//        // Subscrive to input video feed and publish output video feed
+//        image_sub_ = it_.subscribe("/camera/image_raw", 1,
+//                                   &ImageConverter::imageCb, this);
+//        image_pub_ = it_.advertise("/image_converter/output_video", 1);
+//
+//        cv::namedWindow(OPENCV_WINDOW);
 //    }
-//    catch (cv_bridge::Exception& e)
+//
+//    ~ImageConverter()
 //    {
-//        ROS_ERROR("cv_bridge exception: %s", e.what());
-//        return;
+//        cv::destroyWindow(OPENCV_WINDOW);
 //    }
 //
-//    // Draw an example crosshair
-//    cv::drawMarker(cv_ptr->image, cv::Point(cv_ptr->image.cols/2, cv_ptr->image.rows/2),  cv::Scalar(0, 0, 255), cv::MARKER_CROSS, 10, 1);
+//    void imageCb(const sensor_msgs::ImageConstPtr& msg)
+//    {
+//        cv_bridge::CvImagePtr cv_ptr;
+//        try
+//        {
+//            cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+//        }
+//        catch (cv_bridge::Exception& e)
+//        {
+//            ROS_ERROR("cv_bridge exception: %s", e.what());
+//            return;
+//        }
 //
-//    // Update GUI Window
-//    cv::imshow(OPENCV_WINDOW, cv_ptr->image);
-//    cv::waitKey(3);
+//        // Draw an example circle on the video stream
+//        if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
+//            cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255,0,0));
 //
-//    // Output modified video stream
-//    pub.publish(cv_ptr->toImageMsg());
+//        // Update GUI Window
+//        cv::imshow(OPENCV_WINDOW, cv_ptr->image);
+//        cv::waitKey(3);
+//
+//        // Output modified video stream
+//        image_pub_.publish(cv_ptr->toImageMsg());
+//    }
+//};
+//
+//int main(int argc, char** argv)
+//{
+//    ros::init(argc, argv, "image_pub");
+//    ImageConverter ic;
+//    ros::spin();
+//    return 0;
 //}
+
+//#include <ros/ros.h>
+//#include <image_transport/image_transport.h>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <cv_bridge/cv_bridge.h>
+//#include <sstream> // for converting the command line parameter to integer
+//
+//int main(int argc, char** argv)
+//{
+//    // Check if video source has been passed as a parameter
+//    if(argv[1] == NULL) return 1;
+//
+//    ros::init(argc, argv, "image_publisher");
+//    ros::NodeHandle nh;
+//    image_transport::ImageTransport it(nh);
+//    image_transport::Publisher pub = it.advertise("camera/image", 1);
+//
+//    // Convert the passed as command line parameter index for the video device to an integer
+//    std::istringstream video_sourceCmd(argv[1]);
+//    int video_source;
+//    // Check if it is indeed a number
+//    if(!(video_sourceCmd >> video_source)) return 1;
+//
+//    cv::VideoCapture cap(video_source);
+//    // Check if video device can be opened with the given index
+//    if(!cap.isOpened()) return 1;
+//    cv::Mat frame;
+//    sensor_msgs::ImagePtr msg;
+//
+//    ros::Rate loop_rate(5);
+//    while (nh.ok()) {
+//        cap >> frame;
+//        // Check if grabbed frame is actually full with some content
+//        if(!frame.empty()) {
+//            msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", frame).toImageMsg();
+//            pub.publish(msg);
+//            cv::waitKey(1);
+//        }
+//
+//        ros::spinOnce();
+//        loop_rate.sleep();
+//    }
+//}
+
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <cv_bridge/cv_bridge.h>
 
 int main(int argc, char** argv)
 {
-    // Initialize the ROS Node "roscpp_example"
     ros::init(argc, argv, "image_pub");
-
-    // Instantiate the ROS Node Handler as nh
     ros::NodeHandle nh;
+    image_transport::ImageTransport it(nh);
+    image_transport::Publisher pub = it.advertise("camera/image", 1);
+    cv::Mat image = cv::imread('home/pi/elsa_ws/src/elsa/images/tf.png', CV_LOAD_IMAGE_COLOR);
+    cv::waitKey(30);
+    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
 
-    // Print "Hello ROS!" to the terminal and ROS log file
-    ROS_INFO_STREAM("Hello from ROS node " << ros::this_node::getName());
-
-    // Program succesful
-    return 0;
+    ros::Rate loop_rate(5);
+    while (nh.ok()) {
+        pub.publish(msg);
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
 }
