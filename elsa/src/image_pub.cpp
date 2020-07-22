@@ -89,9 +89,9 @@ int main(int argc, char** argv)
     // Check if it is indeed a number
 //    if(!(video_sourceCmd >> video_source)) return 1;
 
-    cv::VideoCapture(0) cap;
+//    cv::VideoCapture(0) cap;
 
-//    auto cap = cv::VideoCapture(0);
+    auto cap = cv::VideoCapture(0);
     // Check if video device can be opened with the given index
     if(!cap.isOpened()) return 1;
     cv::Mat frame;
