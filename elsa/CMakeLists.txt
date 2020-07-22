@@ -127,6 +127,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -157,7 +158,7 @@ target_link_libraries(imu_talker ${catkin_LIBRARIES})
 #target_link_libraries(ticks_pub ${catkin_LIBRARIES})
 
 include_directories(${OpenCV_INCLUDE_DIRS})
-target_link_libraries(image_pub ${OpenCV_LIBRARIES})
+target_link_libraries(image_pub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
 ## Rename C++ executable without prefix
