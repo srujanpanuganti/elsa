@@ -158,7 +158,6 @@ target_link_libraries(tf_listener ${catkin_LIBRARIES})
 target_link_libraries(imu_talker ${catkin_LIBRARIES})
 #target_link_libraries(ticks_pub ${catkin_LIBRARIES})
 
-include_directories(${OpenCV_INCLUDE_DIRS})
 target_link_libraries(image_pub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
