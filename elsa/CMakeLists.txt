@@ -19,8 +19,9 @@ find_package(catkin REQUIRED COMPONENTS
         rosbag
         OpenCV
         cv_bridge
-        image_transport
         )
+
+#        image_transport
 
 find_package(OpenCV 4 REQUIRED)
 
@@ -133,9 +134,10 @@ catkin_package(
         rosbag
         OpenCV
         cv_bridge
-        image_transport
-
 )
+#image_transport
+
+
 ###########
 ## Build ##
 ###########
