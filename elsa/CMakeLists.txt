@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
         tf
         nav_msgs
         geometry_msgs
+        sensor_msgs
         serial
         rosbag
         OpenCV
@@ -130,6 +131,7 @@ catkin_package(
         tf
         nav_msgs
         geometry_msgs
+        sensor_msgs
         serial
         rosbag
         cv_bridge

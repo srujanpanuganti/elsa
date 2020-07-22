@@ -10,7 +10,7 @@
 #include <opencv2/highgui/highgui.hpp>
 
 // Include CvBridge, Image Transport, Image msg
-#include <image_transport/image_transport.h>
+//#include <image_transport/image_transport.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
 
