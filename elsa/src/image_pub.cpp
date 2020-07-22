@@ -74,7 +74,7 @@
 int main(int argc, char** argv)
 {
     // Check if video source has been passed as a parameter
-    if(argv[1] == NULL) return 1;
+//    if(argv[1] == NULL) return 1;
 
     ROS_INFO_STREAM("Here");
 
