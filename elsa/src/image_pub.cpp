@@ -3,7 +3,7 @@
  */
 
 // Include the ROS library
-#include "ros/ros.h"
+#include <ros/ros.h>
 
 // Include opencv2
 #include <opencv2/imgproc/imgproc.hpp>
