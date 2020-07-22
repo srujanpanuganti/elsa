@@ -25,7 +25,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 #        image_transport
 
-find_package(OpenCV 4 REQUIRED)
+#find_package(OpenCV 4 REQUIRED)
 
 
 ## System dependencies are found with CMake's conventions
