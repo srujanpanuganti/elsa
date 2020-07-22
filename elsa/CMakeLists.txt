@@ -132,7 +132,6 @@ catkin_package(
         geometry_msgs
         serial
         rosbag
-        OpenCV
         cv_bridge
 )
 #image_transport
