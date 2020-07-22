@@ -16,7 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   serial
   rosbag
-  opencv4
+  OpenCV
 )
 
 
