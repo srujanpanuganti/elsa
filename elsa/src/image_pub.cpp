@@ -84,12 +84,14 @@ int main(int argc, char** argv)
     image_transport::Publisher pub = it.advertise("camera/image", 1);
 
     // Convert the passed as command line parameter index for the video device to an integer
-    std::istringstream video_sourceCmd(argv[1]);
-    int video_source;
+//    std::istringstream video_sourceCmd(argv[1]);
+//    int video_source;
     // Check if it is indeed a number
-    if(!(video_sourceCmd >> video_source)) return 1;
+//    if(!(video_sourceCmd >> video_source)) return 1;
 
-    cv::VideoCapture cap(video_source);
+    cv::VideoCapture cap(0);
+
+//    auto cap = cv::VideoCapture(0);
     // Check if video device can be opened with the given index
     if(!cap.isOpened()) return 1;
     cv::Mat frame;
