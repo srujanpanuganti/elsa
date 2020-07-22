@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
         rosbag
         OpenCV
         cv_bridge
+        image_transport
         )
 
 #        image_transport
@@ -135,6 +136,7 @@ catkin_package(
         serial
         rosbag
         cv_bridge
+        image_transport
 )
 #image_transport
 
