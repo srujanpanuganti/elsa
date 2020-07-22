@@ -7,16 +7,20 @@ project(elsa)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  tf
-  nav_msgs
-  geometry_msgs
-  serial
-  rosbag
-  OpenCV
+find_package(catkin
+        INCLUDE_DIRS
+        CATKIN_DEPENDS
+                      roscpp
+                      rospy
+                      std_msgs
+                      tf
+                      nav_msgs
+                      geometry_msgs
+                      serial
+                      rosbag
+                      OpenCV
+                      cv_bridge
+                      image_transport
 )
 
 
