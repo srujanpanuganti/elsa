@@ -8,7 +8,8 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg){
 
     try{
         cv::imshow("view", cv_bridge::toCvShare(msg, "bgr8") -> image);
-        cv::waitKey(30);
+//        cv::waitKey(5);
+        ros::Duration(0.1);
     }
     catch(cv_bridge::Exception& e){
         ROS_ERROR("Could not convert from '%s' to 'bgr8'.", msg->encoding.c_str());
@@ -27,7 +28,7 @@ int main(int argc, char **argv){
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber sub = it.subscribe("camera/image", 1, imageCallback);
 
-    cv::startWindowThread();
+//    cv::startWindowThread();
 
     ros::spin();
     cv::destroyWindow("view");
