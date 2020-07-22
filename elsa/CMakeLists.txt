@@ -150,6 +150,7 @@ add_executable(tf_listener src/tf_listener.cpp)
 #add_executable(odom_pub src/odom_publisher.cpp)
 add_executable(imu_talker src/imu_read.cpp)
 #add_executable(ticks_pub src/ticks_pub.py)
+add_executable(image_pub src/image_pub.cpp)
 
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
