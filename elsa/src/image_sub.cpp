@@ -22,7 +22,7 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "image_sub");
     ros::NodeHandle nh;
 
-    cv::nameWindow("view");
+    cv::namedWindow("view");
     cv::startWindowThread();
 
     image_transport::ImageTransport it(nh);
