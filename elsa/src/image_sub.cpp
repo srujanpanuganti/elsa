@@ -23,10 +23,11 @@ int main(int argc, char **argv){
     ros::NodeHandle nh;
 
     cv::namedWindow("view");
-//    cv::startWindowThread();
 
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber sub = it.subscribe("camera/image", 1, imageCallback);
+
+    cv::startWindowThread();
 
     ros::spin();
     cv::destroyWindow("view");
