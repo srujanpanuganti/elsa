@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   serial
   rosbag
+  opencv4
 )
 
 
@@ -152,6 +153,9 @@ target_link_libraries(tf_listener ${catkin_LIBRARIES})
 #target_link_libraries(odom_pub ${catkin_LIBRARIES})
 target_link_libraries(imu_talker ${catkin_LIBRARIES})
 #target_link_libraries(ticks_pub ${catkin_LIBRARIES})
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+target_link_libraries(my_awesome_library ${OpenCV_LIBRARIES})
 
 
 ## Rename C++ executable without prefix
