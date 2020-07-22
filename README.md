@@ -37,9 +37,12 @@
   * Publish sample Twist msg -- Seems like there's an error/lag
   * Debug the motor_driving  
 * Finish the base_controller to subscribe to `/cmd_vel` topic to move the robot_base
+* Write a node to Publish raw images to a ROS topic
+  * Resolve cv_bridge and opencv4 issue for ROS
 
 ## To Do:
 
+* Transport Pi camaera v2 video stream using sensor_msgs/Image to a ROS topic
 * visualized the tf and odometry in rviz
   * Fix the odometry axis and tf axis alignment - there is some offset of 90 degrees
 * Tune the PID controller
