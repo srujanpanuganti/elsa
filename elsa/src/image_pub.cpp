@@ -15,40 +15,54 @@
 #include <sensor_msgs/image_encodings.h>
 
 // OpenCV Window Name
-static const std::string OPENCV_WINDOW = "Image window";
+//static const std::string OPENCV_WINDOW = "Image window";
 
 // Topics
-static const std::string IMAGE_TOPIC = "/camera/rgb/image_raw";
-static const std::string PUBLISH_TOPIC = "/image_converter/output_video";
+//static const std::string IMAGE_TOPIC = "/camera/rgb/image_raw";
+//static const std::string PUBLISH_TOPIC = "/image_converter/output_video";
 
 // Publisher
-ros::Publisher pub;
+//ros::Publisher pub;
 
-void image_cb(const sensor_msgs::ImageConstPtr& msg)
+//void image_cb(const sensor_msgs::ImageConstPtr& msg)
+//{
+//    std_msgs::Header msg_header = msg->header;
+//    std::string frame_id = msg_header.frame_id.c_str();
+//    ROS_INFO_STREAM("New Image from " << frame_id);
+//
+//    cv_bridge::CvImagePtr cv_ptr;
+//    try
+//    {
+//        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+//    }
+//    catch (cv_bridge::Exception& e)
+//    {
+//        ROS_ERROR("cv_bridge exception: %s", e.what());
+//        return;
+//    }
+//
+//    // Draw an example crosshair
+//    cv::drawMarker(cv_ptr->image, cv::Point(cv_ptr->image.cols/2, cv_ptr->image.rows/2),  cv::Scalar(0, 0, 255), cv::MARKER_CROSS, 10, 1);
+//
+//    // Update GUI Window
+//    cv::imshow(OPENCV_WINDOW, cv_ptr->image);
+//    cv::waitKey(3);
+//
+//    // Output modified video stream
+//    pub.publish(cv_ptr->toImageMsg());
+//}
+
+int main(int argc, char** argv)
 {
-    std_msgs::Header msg_header = msg->header;
-    std::string frame_id = msg_header.frame_id.c_str();
-    ROS_INFO_STREAM("New Image from " << frame_id);
+    // Initialize the ROS Node "roscpp_example"
+    ros::init(argc, argv, "image_pub");
 
-    cv_bridge::CvImagePtr cv_ptr;
-    try
-    {
-        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-    }
-    catch (cv_bridge::Exception& e)
-    {
-        ROS_ERROR("cv_bridge exception: %s", e.what());
-        return;
-    }
+    // Instantiate the ROS Node Handler as nh
+    ros::NodeHandle nh;
 
-    // Draw an example crosshair
-    cv::drawMarker(cv_ptr->image, cv::Point(cv_ptr->image.cols/2, cv_ptr->image.rows/2),  cv::Scalar(0, 0, 255), cv::MARKER_CROSS, 10, 1);
+    // Print "Hello ROS!" to the terminal and ROS log file
+    ROS_INFO_STREAM("Hello from ROS node " << ros::this_node::getName());
 
-    // Update GUI Window
-    cv::imshow(OPENCV_WINDOW, cv_ptr->image);
-    cv::waitKey(3);
-
-    // Output modified video stream
-    pub.publish(cv_ptr->toImageMsg());
+    // Program succesful
+    return 0;
 }
-
