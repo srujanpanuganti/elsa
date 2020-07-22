@@ -7,9 +7,8 @@ project(elsa)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(INCLUDE_DIRS
-        CATKIN_DEPENDS
-                      roscpp
+catkin_package(INCLUDE_DIRS
+        CATKIN_DEPENDS roscpp
                       rospy
                       std_msgs
                       tf
