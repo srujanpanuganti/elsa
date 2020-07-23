@@ -174,7 +174,9 @@ add_executable(tf_listener src/tf_listener.cpp)
 add_executable(imu_talker src/imu_read.cpp)
 #add_executable(ticks_pub src/ticks_pub.py)
 add_executable(image_pub src/image_pub.cpp)
-add_executable(image_sub src/image_sub.cpp)
+#add_executable(image_sub src/image_sub.cpp)
+
+#add_executable(image_listener src/image_sub.py)
 
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
@@ -183,7 +185,10 @@ target_link_libraries(imu_talker ${catkin_LIBRARIES})
 #target_link_libraries(ticks_pub ${catkin_LIBRARIES})
 
 target_link_libraries(image_pub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-target_link_libraries(image_sub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+#target_link_libraries(image_sub ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+#target_link_libraries(image_listener ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 
 
 ## Rename C++ executable without prefix
