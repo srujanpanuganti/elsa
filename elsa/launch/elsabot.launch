@@ -8,12 +8,19 @@
         name="robot_tf_publisher"
         output="screen">
     </node>
-    <!-- ticks_pub launch file -->
+    <!-- imu_pub launch file -->
     <node pkg="elsa"
         type="imu_talker"
         name="imu_talker"
         output="screen">
     </node>
+    <!-- image_pub launch file -->
+    <node pkg="elsa"
+        type="image_pub"
+        name="image_pub"
+        output="screen">
+    </node>
+
 </launch>
 
     <!-- odom_pub launch file -->
