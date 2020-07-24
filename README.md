@@ -38,7 +38,7 @@
   * Debug the motor_driving  
 * Finish the base_controller to subscribe to `/cmd_vel` topic to move the robot_base
 * Write a node to Publish raw images to a ROS topic
-  * Resolve cv_bridge and opencv4 issue for ROS
+  * Resolve cv_bridge and opencv4 issue for ROS - the issue is specific to ROS-melodic and OpenCV4 combination
 
 ## To Do:
 
