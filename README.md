@@ -39,15 +39,16 @@
 * Finish the base_controller to subscribe to `/cmd_vel` topic to move the robot_base
 * Write a node to Publish raw images to a ROS topic
   * Resolve cv_bridge and opencv4 issue for ROS - the issue is specific to ROS-melodic and OpenCV4 combination
+* Transport Pi camaera v2 video stream using sensor_msgs/Image to a ROS topic
+* Setup either YDLidar X4 for 2D map creation - needed extra cable to power the LIDAR, since the RPi cannot 
+provide enough power to drive the LIDAR motor
 
 ## To Do:
 
-* Transport Pi camaera v2 video stream using sensor_msgs/Image to a ROS topic
 * visualized the tf and odometry in rviz
   * Fix the odometry axis and tf axis alignment - there is some offset of 90 degrees
 * Tune the PID controller
 * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
-* Setup either RPLidar A1 or YDLidar X2 for 2D map creation
 * Use slam techniques for mapping
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
 
@@ -78,3 +79,4 @@
 * The Projects also uses few insights from the package [diff_drive](https://github.com/merose/diff_drive)
 * The project refers several tutorials from [ROS wiki](http://wiki.ros.org/ROS/Tutorials) 
 * The topics are published according to the coordinates frames as per [REP103 standards](https://www.ros.org/reps/rep-0103.html) and [REP105 standards](https://www.ros.org/reps/rep-0105.html)
+* The YDLIDAR uses the package provided by EAI YDLIDAR [github](https://github.com/EAIBOT/ydlidar)
