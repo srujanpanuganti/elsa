@@ -21,14 +21,11 @@ int main(int argc, char** argv){
 //                        tf::Transform(tf::Quaternion(0, 0, 1, 0), tf::Vector3(-0.0145, -0.0765, -0.06)),
 //                        tf::Transform(tf::Quaternion(0, 0, 0.7071, 0.7071), tf::Vector3(-0.021, 0.0215, -0.06)),
                         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0865, 0.044, -0.06)),
-
                         ros::Time::now(),"odom", "base_link"));
-//                        ros::Time::now(),"base_link", "odom"));
         broadcaster.sendTransform(
                 tf::StampedTransform(
                         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(-0.0435, 0, -0.10)),
                         ros::Time::now(),"base_laser", "base_link"));
-//                        ros::Time::now(),"base_link", "odom"));
 
 
         r.sleep();
