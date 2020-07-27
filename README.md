@@ -44,13 +44,13 @@
 provide enough power to drive the LIDAR motor
 * visualized the tf and odometry in rviz
   * Fix the odometry axis and tf axis alignment - made sure all the axis are aligning in same direction
+* rename the coordinate frames of the ydlidar to match with our convention
 
 ## To Do:
 
 * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
   * check if everything is working as expected
 * Fix the direction issue with motor driver.
-* rename the coordinate frames of the ydlidar to match with our convention
 * Tune the PID controller
 * Use slam techniques for mapping - nee to try Gmapping first 
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
