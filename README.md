@@ -42,14 +42,17 @@
 * Transport Pi camaera v2 video stream using sensor_msgs/Image to a ROS topic
 * Setup either YDLidar X4 for 2D map creation - needed extra cable to power the LIDAR, since the RPi cannot 
 provide enough power to drive the LIDAR motor
+* visualized the tf and odometry in rviz
+  * Fix the odometry axis and tf axis alignment - made sure all the axis are aligning in same direction
+* rename the coordinate frames of the ydlidar to match with our convention
 
 ## To Do:
 
-* visualized the tf and odometry in rviz
-  * Fix the odometry axis and tf axis alignment - there is some offset of 90 degrees
-* Tune the PID controller
 * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
-* Use slam techniques for mapping
+  * check if everything is working as expected
+* Fix the direction issue with motor driver.
+* Tune the PID controller
+* Use slam techniques for mapping - nee to try Gmapping first 
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
 
 ## Results:
