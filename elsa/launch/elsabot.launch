@@ -1,7 +1,7 @@
 <launch>
 
 	<include file="$(find ros_arduino_python)/launch/arduino.launch" />
-	<include file="$(find ydlidar)/launch/lidar.launch" />
+<!-- 	<include file="$(find ydlidar)/launch/lidar.launch" /> -->
 
     <!-- tf_broadcaster launch file -->
     <node pkg="elsa"
@@ -16,11 +16,11 @@
         output="screen">
     </node>
     <!-- image_pub launch file -->
-    <node pkg="elsa"
-        type="image_pub"
-        name="image_pub"
-        output="screen">
-    </node>
+<!--     <node pkg="elsa" -->
+<!--         type="image_pub" -->
+<!--         name="image_pub" -->
+<!--         output="screen"> -->
+<!--     </node> -->
 
 </launch>
 
