@@ -1,11 +1,14 @@
 <launch>
 
+    <include file="$(find ros_arduino_python)/launch/arduino.launch" />
+    <include file="$(find ydlidar)/launch/lidar.launch" />
+
     <!-- tf_broadcaster launch file -->
-    <node pkg="elsa"
-        type="tf_broadcaster"
-        name="robot_tf_publisher"
-        output="screen">
-    </node>
+<!--     <node pkg="elsa" -->
+<!--         type="tf_broadcaster" -->
+<!--         name="robot_tf_publisher" -->
+<!--         output="screen"> -->
+<!--     </node> -->
     <!-- imu_pub launch file -->
     <node pkg="elsa"
         type="imu_talker"
@@ -13,8 +16,11 @@
         output="screen">
     </node>
 
-    <include file="$(find ros_arduino_python)/launch/arduino.launch" />
-    <include file="$(find ydlidar)/launch/lidar.launch" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser4"
+    args="0.1015 -0.054 -0.06 0.0 0.0 0.0 /odom /base_link 40" />
+
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser4"
+    args="-0.0435 0.0 -0.10 0.0 0.0 0.0 /base_laser /base_link 40" />
 
 </launch>
 
