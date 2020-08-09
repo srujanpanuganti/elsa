@@ -7,6 +7,11 @@
 <em>ELSA Robot</em>
 </p>
 
+## Project Dependencies
+
+* To install teleop-twist-keyboard
+  * `sudo apt-get install ros-melodic-teleop-twist-keyboard`
+
 ## Project information:
 * The project has two packages `elsa` and `ros_arduino_bridge`
 * Follow the below instructions to build the project
@@ -16,7 +21,8 @@
   * `catkin_make --only-pkg-with-deps ros_arduino_bridge`
 * Follow the below commands to execute the project
   * `roslaunch elsa elsabot.launch`
-
+* Use the below command to do keyboard teleop
+  * `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
 
 ## Docs:
 * Coordinate Transformations and Robot Dimensions can be found at `docs/Robot dimensions and coordinate transformations.pdf`
@@ -45,14 +51,17 @@ provide enough power to drive the LIDAR motor
 * visualized the tf and odometry in rviz
   * Fix the odometry axis and tf axis alignment - made sure all the axis are aligning in same direction
 * rename the coordinate frames of the ydlidar to match with our convention
+* fix encoder direction
+* fix the motor direction
+* Use teleop_twist_keyboard to move the robot -- works perfectly
 
 ## To Do:
 
 * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
   * check if everything is working as expected
-* Fix the direction issue with motor driver.
+* Fix the direction issue with rviz visualization -- Problem is with Odometry calculation
 * Tune the PID controller
-* Use slam techniques for mapping - nee to try Gmapping first 
+* Use slam techniques for mapping - need to try Gmapping first 
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
 
 ## Results:
