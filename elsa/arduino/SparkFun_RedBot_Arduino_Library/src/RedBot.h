@@ -131,13 +131,16 @@ class RedBotEncoder
     void clearEnc(WHEEL wheel); // Zaps the encoder count for a given wheel (or
                              //  for both wheels).
     long getTicks(WHEEL wheel); // Returns the encoder count for a wheel.
+    char lDir;               // Direction is set by the motor class, according
+    char rDir;               //  to what the most recent motion direction for
+
   private:
     void wheelTick(WHEEL wheel); // Increment or decrement a wheel's counts,
                              //  depending on which way the motor is turning.
     long lCounts;            // Holds the number of ticks for that wheel's
     long rCounts;            //  encoder.
-    char lDir;               // Direction is set by the motor class, according
-    char rDir;               //  to what the most recent motion direction for
+    //char lDir;               // Direction is set by the motor class, according
+    //char rDir;               //  to what the most recent motion direction for
                              //  the given wheel was.
 };
 
