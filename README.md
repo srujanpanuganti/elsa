@@ -97,7 +97,7 @@ provide enough power to drive the LIDAR motor
 * The below image shows the TF tree based on coordinate transforms being published to `/tf`
 
 <p align="center">
-<img src="images/frame.png" alt="tf_tree" width="1080">
+<img src="images/frames.png" alt="tf_tree" width="1080">
 </p>
 <p align="center">
 <em>TF Tree</em>
