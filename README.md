@@ -1,7 +1,7 @@
 # ELSA - Explore, Localize, Map Simultaeneously and Act
 
 <p align="center">
-<img src="images/elsa1.jpg" alt="elsa" width="640">
+<img src="images/elsabot_2.jpg" alt="elsa" width="640">
 </p>
 <p align="center">
 <em>ELSA Robot</em>
@@ -84,6 +84,14 @@ provide enough power to drive the LIDAR motor
 <em>Odometry of the ELSA Robot in rviz</em>
 </p>
 
+* The below image shows the laserscan from YDLIDAR X2 being pubilshed to `/scan`
+
+<p align="center">
+<img src="images/laser_can.png" alt="ls" width="1080">
+</p>
+<p align="center">
+<em>Laser Scan in rviz</em>
+</p>
 
 ## References:
 * The project uses the [ROSArduinoBridge](https://github.com/hbrobotics/ros_arduino_bridge) Package. However, many modifications are made according to the requirements
