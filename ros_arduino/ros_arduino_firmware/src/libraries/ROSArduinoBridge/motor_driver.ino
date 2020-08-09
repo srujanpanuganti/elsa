@@ -73,12 +73,32 @@
       spd = 255;
     
     if (i == LEF) { 
-      if      (reverse == 0) { analogWrite(RIGHT_MOTOR_FORWARD, spd); analogWrite(RIGHT_MOTOR_BACKWARD, 0); }
-      else if (reverse == 1) { analogWrite(RIGHT_MOTOR_BACKWARD, spd); analogWrite(RIGHT_MOTOR_FORWARD, 0); }
+      if      (reverse == 0)
+      {
+        analogWrite(RIGHT_MOTOR_FORWARD, spd);
+        analogWrite(RIGHT_MOTOR_BACKWARD, 0);
+        encoder.lDir =1;
+        }
+      else if (reverse == 1)
+      {
+        analogWrite(RIGHT_MOTOR_BACKWARD, spd);
+        analogWrite(RIGHT_MOTOR_FORWARD, 0);
+        encoder.lDir =-1;
+        }
     }
     else /*if (i == RIG) //no need for condition*/ {
-      if      (reverse == 0) { analogWrite(LEFT_MOTOR_FORWARD, spd); analogWrite(LEFT_MOTOR_BACKWARD, 0); }
-      else if (reverse == 1) { analogWrite(LEFT_MOTOR_BACKWARD, spd); analogWrite(LEFT_MOTOR_FORWARD, 0); }
+      if      (reverse == 0)
+      {
+        analogWrite(LEFT_MOTOR_FORWARD, spd);
+        analogWrite(LEFT_MOTOR_BACKWARD, 0);
+        encoder.rDir =1;
+        }
+      else if (reverse == 1)
+      {
+        analogWrite(LEFT_MOTOR_BACKWARD, spd);
+        analogWrite(LEFT_MOTOR_FORWARD, 0);
+        encoder.rDir =-1;
+        }
     }
   }
   
