@@ -54,12 +54,12 @@ provide enough power to drive the LIDAR motor
 * fix encoder direction
 * fix the motor direction
 * Use teleop_twist_keyboard to move the robot -- works perfectly
+* Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
+  * check if everything is working as expected -- need to tweak covariance matrix for better estimation
+* Fix the direction issue with rviz visualization -- Problem is with Odometry calculation -- robot_localization is solving this
 
 ## To Do:
 
-* Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
-  * check if everything is working as expected
-* Fix the direction issue with rviz visualization -- Problem is with Odometry calculation
 * Tune the PID controller
 * Use slam techniques for mapping - need to try Gmapping first 
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
@@ -94,8 +94,9 @@ provide enough power to drive the LIDAR motor
 </p>
 
 ## References:
+* The TF tree can be found at `elsa/docs/frames.pdf`
 * The project uses the [ROSArduinoBridge](https://github.com/hbrobotics/ros_arduino_bridge) Package. However, many modifications are made according to the requirements
-* The Project also uses the [SparkFun_RedBot_Arduino_Library](https://github.com/sparkfun/SparkFun_RedBot_Arduino_Library) Arduino Library
+* The Project also uses the [SparkFun_RedBot_Arduino_Library](https://github.com/sparkfun/SparkFun_RedBot_Arduino_Library) Arduino Library. This library has been modified a little bit according to our requirement. The updated library can be found in `/elsa/elsa/arduino/`
 * The Projects also uses few insights from the package [diff_drive](https://github.com/merose/diff_drive)
 * The project refers several tutorials from [ROS wiki](http://wiki.ros.org/ROS/Tutorials) 
 * The topics are published according to the coordinates frames as per [REP103 standards](https://www.ros.org/reps/rep-0103.html) and [REP105 standards](https://www.ros.org/reps/rep-0105.html)
