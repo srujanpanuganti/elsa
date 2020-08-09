@@ -87,11 +87,22 @@ provide enough power to drive the LIDAR motor
 * The below image shows the laserscan from YDLIDAR X2 being pubilshed to `/scan`
 
 <p align="center">
-<img src="images/laser_can.png" alt="ls" width="1080">
+<img src="images/laser_scan.png" alt="ls" width="1080">
 </p>
 <p align="center">
 <em>Laser Scan in rviz</em>
 </p>
+
+
+* The below image shows the TF tree based on coordinate transforms being published to `/tf`
+
+<p align="center">
+<img src="images/frame.png" alt="tf_tree" width="1080">
+</p>
+<p align="center">
+<em>TF Tree</em>
+</p>
+
 
 ## References:
 * The TF tree can be found at `elsa/docs/frames.pdf`
