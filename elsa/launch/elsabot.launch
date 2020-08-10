@@ -1,7 +1,7 @@
 <launch>
 
     <include file="$(find ros_arduino_python)/launch/arduino.launch" />
-<!--     <include file="$(find ydlidar)/launch/lidar.launch" /> -->
+    <include file="$(find ydlidar)/launch/lidar.launch" />
 
     <!-- tf_broadcaster launch file -->
     <node pkg="elsa"
