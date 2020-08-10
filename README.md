@@ -11,6 +11,8 @@
 
 * To install teleop-twist-keyboard
   * `sudo apt-get install ros-melodic-teleop-twist-keyboard`
+* To install gmapping clone and build [this](https://github.com/ros-perception/slam_gmapping)
+* To install robot_localization, clone and build [this](https://github.com/cra-ros-pkg/robot_localization)
 
 ## Project information:
 * The project has two packages `elsa` and `ros_arduino_bridge`
@@ -23,6 +25,13 @@
   * `roslaunch elsa elsabot.launch`
 * Use the below command to do keyboard teleop
   * `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+* To launch gmapping
+  * `roslaunch gmapping slam_mapping_pr2.lanch`
+* To save the map
+  * `rosrun map_server map_saver -f /tmp/my_map`
+* To use robot_localization package for filtered odometry data
+  * `roslaunch robot_localization ekf_template.launch` --> This will be merged to the elsa project, as we are required to edit the EKF parameters according to our requirement
+
 
 ## Docs:
 * Coordinate Transformations and Robot Dimensions can be found at `docs/Robot dimensions and coordinate transformations.pdf`
@@ -112,3 +121,4 @@ provide enough power to drive the LIDAR motor
 * The project refers several tutorials from [ROS wiki](http://wiki.ros.org/ROS/Tutorials) 
 * The topics are published according to the coordinates frames as per [REP103 standards](https://www.ros.org/reps/rep-0103.html) and [REP105 standards](https://www.ros.org/reps/rep-0105.html)
 * The YDLIDAR uses the package provided by EAI YDLIDAR [github](https://github.com/EAIBOT/ydlidar)
+* The Project uses robobt_localization package to fuse imu and encoder-based Odometry data, to provide filtered pose. Technical documentation for the robot_localization package can be found [here](http://docs.ros.org/melodic/api/robot_localization/html/index.html)
