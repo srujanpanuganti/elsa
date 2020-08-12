@@ -78,7 +78,7 @@ provide enough power to drive the LIDAR motor
 ### Elsa in Action!
 
 <p align="center">
-<img src="images/elsa2.gif" alt="elsa" width="480">
+<img src="images/elsa2.gif" alt="elsa" width="1080">
 </p>
 <p align="center">
 <em>ELSA Result</em>
@@ -115,7 +115,7 @@ provide enough power to drive the LIDAR motor
 * The below image shows the TF tree based on coordinate transforms being published to `/tf`
 
 <p align="center">
-<img src="images/frames.png" alt="tf_tree" width="1080">
+<img src="images/frames.png" alt="tf_tree" width="720">
 </p>
 <p align="center">
 <em>TF Tree</em>
