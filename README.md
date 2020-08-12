@@ -1,7 +1,7 @@
 # ELSA - Explore, Localize, Map Simultaeneously and Act
 
 <p align="center">
-<img src="images/elsabot_2.jpeg" alt="elsa" width="640">
+<img src="images/elsabot_2.jpeg" alt="elsa" width="600">
 </p>
 <p align="center">
 <em>ELSA Robot</em>
@@ -74,6 +74,15 @@ provide enough power to drive the LIDAR motor
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
 
 ## Results:
+
+### Elsa in Action!
+
+<p align="center">
+<img src="images/elsa2.gif" alt="elsa" width="480">
+</p>
+<p align="center">
+<em>ELSA Result</em>
+</p>
 
 * The below image shows the `/base_link` and `/odom` coordinate frames and trasformations between them in rviz
 
