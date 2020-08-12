@@ -66,11 +66,11 @@ provide enough power to drive the LIDAR motor
 * Use robot_localization package to filter the Odometry msg using ekf_lozalisation node
   * check if everything is working as expected -- need to tweak covariance matrix for better estimation
 * Fix the direction issue with rviz visualization -- Problem is with Odometry calculation -- robot_localization is solving this
+* Use slam techniques for mapping - Works
+* Tune the PID controller
 
 ## To Do:
 
-* Tune the PID controller
-* Use slam techniques for mapping - need to try Gmapping first 
 * Use camera data to obtain the images to do SFM and build the 3D_point_cloud_map
 
 ## Results:
