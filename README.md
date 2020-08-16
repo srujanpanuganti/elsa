@@ -10,25 +10,40 @@
 ## Project Dependencies
 
 * To install teleop-twist-keyboard
-  * `sudo apt-get install ros-melodic-teleop-twist-keyboard`
+
+```
+sudo apt-get install ros-melodic-teleop-twist-keyboard
+```
+
 * To install gmapping clone and build [this](https://github.com/ros-perception/slam_gmapping)
 * To install robot_localization, clone and build [this](https://github.com/cra-ros-pkg/robot_localization)
 
 ## Project information:
 * The project has two packages `elsa` and `ros_arduino_bridge`
 * Follow the below instructions to build the project
-  * `cd ~/catkin_ws`
-  * `source devel/setup.bash` 
-  * `catkin_make --only-pkg-with-deps elsa`
-  * `catkin_make --only-pkg-with-deps ros_arduino_bridge`
+
+```
+cd ~/catkin_ws`
+source devel/setup.bash
+catkin_make --only-pkg-with-deps elsa
+catkin_make --only-pkg-with-deps ros_arduino_bridge
+```
 * Follow the below commands to execute the project
-  * `roslaunch elsa elsabot.launch`
+```
+roslaunch elsa elsabot.launch
+```
 * Use the below command to do keyboard teleop
-  * `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+```
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
 * To launch gmapping
-  * `roslaunch gmapping slam_mapping_pr2.lanch`
+```
+roslaunch gmapping slam_mapping_pr2.lanch
+```
 * To save the map
-  * `rosrun map_server map_saver -f /tmp/my_map`
+```
+rosrun map_server map_saver -f /tmp/my_map
+```
 * To use robot_localization package for filtered odometry data
   * `roslaunch robot_localization ekf_template.launch` --> This will be merged to the elsa project, as we are required to edit the EKF parameters according to our requirement
 
